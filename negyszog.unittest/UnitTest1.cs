@@ -1,22 +1,22 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using Kor;
+using negyszog;
 
-namespace KorUnitTest
+namespace negyszog.unittest
 {
     [TestClass]
-    public class KorTeszteles
+    public class NegyszogClass
     {
         [TestMethod]
         public void TeruletTeszt()
         {
             // Arrange - Környezet beállítása
             //Példányosítom az osztályt
-            KorClass kr = new KorClass(3);
+            NegyszogClass kr = new NegyszogClass(3);
             kr.setTerulet();
 
             //Act - Futtatás
-            double varteredmeny = 28.27;
+            double varteredmeny = 9;
             double kapotteredmeny = Math.Round(kr.getTerulet(), 2);
             //Assert - Kiértékelés
             Assert.AreEqual(varteredmeny, kapotteredmeny);
@@ -24,21 +24,30 @@ namespace KorUnitTest
         [TestMethod]
         public void KeruletTeszt()
         {
-            KorClass kr = new KorClass(3);
+            NegyszogClass kr = new NegyszogClass(3);
             kr.setKerulet();
-            double varteredmeny = 18.85;
+            double varteredmeny = 12;
             double kapotteredmeny = Math.Round(kr.getKerulet(), 2);
             Assert.AreEqual(varteredmeny, kapotteredmeny);
         }
         [TestMethod]
-        public void SugarTeszt()
+        public void OldalTeszt()
         {
-            KorClass kr = new KorClass(3);
-            kr.getSugar();
+            NegyszogClass kr = new NegyszogClass(3);
+            kr.getOldal();
             double varteredmeny = 3;
-            double kapotteredmeny = kr.getSugar();
+            double kapotteredmeny = kr.getOldal();
             Assert.AreEqual(varteredmeny, kapotteredmeny);
+        }
 
+        [TestMethod]
+        public void Oldal2Teszt()
+        {
+            NegyszogClass kr = new NegyszogClass();
+            kr.getOldal2();
+            double varteredmeny = 3;
+            double kapotteredmeny = kr.getOldal2();
+            Assert.AreEqual(varteredmeny, kapotteredmeny);
         }
     }
 }
